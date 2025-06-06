@@ -358,81 +358,378 @@
     </section>
 
     <!-- Portfolio -->
-    <section class="portfolio-section-unique">
-      <h2 class="portfolio-heading-unique">Portfolio</h2>
-      <p class="portfolio-subheading-unique">
+    <section class="portfolio-section-wrapper">
+      <h2 class="portfolio-title-text">Portfolio</h2>
+      <p class="portfolio-subtitle-text">
         Necessitatibus eius consequatur ex aliquid fuga eum quidem sunt
         consequatur velit
       </p>
 
-      <div class="portfolio-tabs-unique">
-        <button class="portfolio-tab-button-unique active">All Work</button>
-        <button class="portfolio-tab-button-unique">Web Design</button>
-        <button class="portfolio-tab-button-unique">Graphics</button>
-        <button class="portfolio-tab-button-unique">Motion</button>
-        <button class="portfolio-tab-button-unique">Branding</button>
+      <div class="portfolio-tabs-nav">
+        <button
+          class="portfolio-tab-btn active"
+          onclick="filterPortfolio('all')"
+        >
+          All Work
+        </button>
+        <button
+          class="portfolio-tab-btn"
+          onclick="filterPortfolio('webdesign')"
+        >
+          Web Design
+        </button>
+        <button class="portfolio-tab-btn" onclick="filterPortfolio('graphics')">
+          Graphics
+        </button>
+        <button class="portfolio-tab-btn" onclick="filterPortfolio('motion')">
+          Motion
+        </button>
+        <button class="portfolio-tab-btn" onclick="filterPortfolio('branding')">
+          Branding
+        </button>
       </div>
 
-      <div class="portfolio-grid-unique">
-        <div class="portfolio-card-unique">
-          <div class="portfolio-card-image-unique">
+      <div class="portfolio-grid-content" id="portfolio-gallery-grid">
+        <!-- Web Design -->
+        <div class="portfolio-card-box" data-category="webdesign">
+          <div class="portfolio-card-image">
             <img
               src="https://images.pexels.com/photos/965990/pexels-photo-965990.jpeg"
-              alt="Modern Dashboard Interface"
+              alt=""
             />
           </div>
-          <div class="portfolio-card-info-unique">
-            <div class="portfolio-card-category-unique">Web Design</div>
-            <div class="portfolio-card-title-unique">
-              Modern Dashboard Interface
-            </div>
+          <div class="portfolio-card-text-info">
+            <div class="portfolio-category-label">Web Design</div>
+            <div class="portfolio-title-label">Modern Dashboard Interface</div>
           </div>
         </div>
-
-        <div class="portfolio-card-unique">
-          <div class="portfolio-card-image-unique">
+        <!-- Graphics -->
+        <div class="portfolio-card-box" data-category="graphics">
+          <div class="portfolio-card-image">
             <img
               src="https://images.pexels.com/photos/3471421/pexels-photo-3471421.jpeg"
-              alt="Creative Brand Identity"
+              alt=""
             />
           </div>
-          <div class="portfolio-card-info-unique">
-            <div class="portfolio-card-category-unique">Graphics</div>
-            <div class="portfolio-card-title-unique">
-              Creative Brand Identity
-            </div>
+          <div class="portfolio-card-text-info">
+            <div class="portfolio-category-label">Graphics</div>
+            <div class="portfolio-title-label">Creative Brand Identity</div>
           </div>
         </div>
-
-        <div class="portfolio-card-unique">
-          <div class="portfolio-card-image-unique">
+        <!-- Motion -->
+        <div class="portfolio-card-box" data-category="motion">
+          <div class="portfolio-card-image">
             <img
               src="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg"
-              alt="Product Animation Reel"
+              alt=""
             />
           </div>
-          <div class="portfolio-card-info-unique">
-            <div class="portfolio-card-category-unique">Motion</div>
-            <div class="portfolio-card-title-unique">
-              Product Animation Reel
-            </div>
+          <div class="portfolio-card-text-info">
+            <div class="portfolio-category-label">Motion</div>
+            <div class="portfolio-title-label">Product Animation Reel</div>
           </div>
         </div>
-
-        <div class="portfolio-card-unique">
-          <div class="portfolio-card-image-unique">
+        <!-- Branding -->
+        <div class="portfolio-card-box" data-category="branding">
+          <div class="portfolio-card-image">
             <img
               src="https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg"
-              alt="Luxury Brand Package"
+              alt=""
             />
           </div>
-          <div class="portfolio-card-info-unique">
-            <div class="portfolio-card-category-unique">Branding</div>
-            <div class="portfolio-card-title-unique">Luxury Brand Package</div>
+          <div class="portfolio-card-text-info">
+            <div class="portfolio-category-label">Branding</div>
+            <div class="portfolio-title-label">Luxury Brand Package</div>
+          </div>
+        </div>
+        <!-- Web Design -->
+        <div class="portfolio-card-box" data-category="webdesign">
+          <div class="portfolio-card-image">
+            <img
+              src="https://images.pexels.com/photos/3182783/pexels-photo-3182783.jpeg"
+              alt=""
+            />
+          </div>
+          <div class="portfolio-card-text-info">
+            <div class="portfolio-category-label">Web Design</div>
+            <div class="portfolio-title-label">Ecommerce Layout UI</div>
+          </div>
+        </div>
+        <!-- Motion -->
+        <div class="portfolio-card-box" data-category="motion">
+          <div class="portfolio-card-image">
+            <img
+              src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg"
+              alt=""
+            />
+          </div>
+          <div class="portfolio-card-text-info">
+            <div class="portfolio-category-label">Motion</div>
+            <div class="portfolio-title-label">Intro Sequence Design</div>
           </div>
         </div>
       </div>
     </section>
+
+    <hr />
+
+    <!-- our work -->
+    <section class="process-section">
+      <div class="section-header">
+        <p>OUR WORK PROCESS</p>
+        <h1>Our Proven Process for<br />Delivering Success</h1>
+        <a href="#" class="get-in-touch-btn">Get In Touch</a>
+      </div>
+      <div class="slider-container">
+        <button class="arrow arrow-left" onclick="prevSlide()">❮</button>
+        <div class="slide-card" id="slide">
+          <div class="slide-image">
+            <img src="/images/mobile-dev.jpg" alt="slide" />
+          </div>
+          <div class="slide-content">
+            <h2>Monitoring & Optimization</h2>
+            <p>
+              Continuous Monitoring And Regular Optimizations To Keep Your
+              Campaigns Effective And Aligned With Your Goals.
+            </p>
+            <ul>
+              <li>In-Depth Research</li>
+              <li>Implementation with Precision</li>
+              <li>Transparent Reporting</li>
+            </ul>
+          </div>
+        </div>
+        <button class="arrow arrow-right" onclick="nextSlide()">❯</button>
+      </div>
+    </section>
+
+    <!-- INDUSTRIES WE SERVE -->
+    <div data-wrapper="main">
+      <div data-animation="background">
+        <div data-element="circle"></div>
+        <div data-element="circle"></div>
+        <div data-element="circle"></div>
+      </div>
+
+      <div data-container="content">
+        <div data-section="header">
+          <h1 data-title="main">Key Industries We Serve</h1>
+          <p data-text="subtitle">
+            SVTL delivers cutting-edge digital solutions & innovative technology
+            services, empowering businesses across diverse industries to achieve
+            tomorrow's success today!
+          </p>
+        </div>
+
+        <div data-grid="services">
+          <div data-card="service">
+            <div data-icon="service">🛒</div>
+            <h3 data-title="service">Retail & E-commerce</h3>
+            <p data-text="description">
+              SVTL delivers tailored IT solutions for retail and e-commerce,
+              enhancing digital experiences, streamlining operations, and
+              boosting sales.
+            </p>
+          </div>
+
+          <div data-card="service">
+            <div data-icon="service">💪</div>
+            <h3 data-title="service">Fitness & Wellness</h3>
+            <p data-text="description">
+              SVTL empowers fitness and wellness businesses with innovative
+              tech, offering seamless app development, digital marketing, and
+              personalized solutions for growth.
+            </p>
+          </div>
+
+          <div data-card="service">
+            <div data-icon="service">🏥</div>
+            <h3 data-title="service">Healthcare</h3>
+            <p data-text="description">
+              SVTL provides secure, compliant healthcare IT solutions,
+              optimizing patient management systems, telemedicine platforms, and
+              digital health innovations.
+            </p>
+          </div>
+
+          <div data-card="service">
+            <div data-icon="service">⚖️</div>
+            <h3 data-title="service">Legal Firm</h3>
+            <p data-text="description">
+              Smart Vision TechLabs offers robust IT services for legal firms,
+              including secure document management, case tracking, and efficient
+              client communication tools.
+            </p>
+          </div>
+
+          <div data-card="service">
+            <div data-icon="service">🏨</div>
+            <h3 data-title="service">Hospitality</h3>
+            <p data-text="description">
+              SVTL delivers tailored IT solutions for retail and e-commerce,
+              enhancing digital experiences, streamlining operations, and
+              boosting sales.
+            </p>
+          </div>
+
+          <div data-card="service">
+            <div data-icon="service">👗</div>
+            <h3 data-title="service">Apparel & Fashion</h3>
+            <p data-text="description">
+              Smart Vision TechLabs drives fashion brands forward with
+              innovative e-commerce platforms, inventory management solutions,
+              and digital marketing expertise.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- testimonial -->
+    <section class="testimonial-section">
+      <div class="testimonial-left">
+        <div class="testimonial-title">
+          <p
+            style="
+              font-size: 14px;
+              color: #666;
+              letter-spacing: 1px;
+              margin-bottom: 10px;
+            "
+          >
+            TESTIMONIALS
+          </p>
+          <h2>Proven Success Through Our Clients’ Words</h2>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">
+            <img src="/images/seoright.jpg" alt="Sarah M" />
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-name">Sarah M</div>
+            <div class="testimonial-role">E-Commerce Owner</div>
+            <div class="testimonial-text">
+              SEOX Transformed Our Online Presence. We Saw A 300% Increase In
+              Website Months!
+            </div>
+          </div>
+          <div class="quote-icon">&#10077;</div>
+        </div>
+
+        <div class="testimonial-card highlight">
+          <div class="testimonial-avatar">
+            <img src="/images/ppc3.jpg" alt="John Doe" />
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-name">John Doe</div>
+            <div class="testimonial-role">Marketing Manager</div>
+            <div class="testimonial-text">
+              Team Is Proactive, Professional, Results-Driven. Highly Recommend
+              Their Services!
+            </div>
+          </div>
+          <div class="quote-icon">&#10077;</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">
+            <img src="/images/sample1.jpg" alt="Alex Hales" />
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-name">Alex Hales</div>
+            <div class="testimonial-role">E-Commerce Owner</div>
+            <div class="testimonial-text">
+              Thanks To SEOX, Our Revenue Doubled Last Year. They’re Truly The
+              Best In The Industry.
+            </div>
+          </div>
+          <div class="quote-icon">&#10077;</div>
+        </div>
+
+        <!-- <a href="#" class="view-button">View All Review</a> -->
+      </div>
+
+      <div class="testimonial-right">
+        <a href="#" class="view-button">View All Review</a>
+
+        <img src="/images/seoright.jpg" alt="Happy Client" />
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- blog -->
+    <section class="case-studies-section">
+      <div class="case-studies-header">
+        <h2>Webential in Action: Explore Our Customer Success Stories</h2>
+        <p>
+          Browse our case studies below to see how we turn vision into reality
+          by driving web traffic, user engagement, lead conversion, and more.
+        </p>
+      </div>
+
+      <div class="case-studies-grid">
+        <div class="case-card">
+          <img
+            src="/images/WhatsApp Image 2025-06-06 at 21.46.45_2eb22486.jpg"
+            alt="Mega Cash Website"
+          />
+          <div class="case-card-content">
+            <div class="tags">
+              <span class="tag">SEO</span>
+              <span class="tag">Web Development</span>
+              <span class="tag">Shopify</span>
+              <span class="tag">eCommerce</span>
+              <span class="tag">Pawnbroker</span>
+            </div>
+            <div class="case-title">Mega Cash</div>
+            <div class="case-description">
+              Mega Cash improved its online presence by redesigning its website
+              and using a strong SEO strategy. We moved their site to Shopify,
+              made it easier to use and search-friendly, and focused on mobile
+              and local performance.
+            </div>
+            <div class="case-stats">
+              <div>33.84% Increase in Organic Sessions</div>
+              <div>33.59% Boost in Organic Conversions</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <img
+            src="/images/WhatsApp Image 2025-06-06 at 21.47.46_d01bc711.jpg"
+            alt="Connected Audio Visual"
+          />
+          <div class="case-card-content">
+            <div class="tags">
+              <span class="tag">Web Development</span>
+              <span class="tag">SEO</span>
+              <span class="tag">Wordpress</span>
+              <span class="tag">Audio Equipment</span>
+              <span class="tag">Consumer Electronics</span>
+            </div>
+            <div class="case-title">Connected Audio Visual</div>
+            <div class="case-description">
+              Connected Audio Visual, an Australian-owned company, needed a
+              modern website that reflected their status as a leading integrated
+              technology provider.
+            </div>
+            <div class="highlight-point">
+              📱 Enhanced User Experience Across All Devices
+            </div>
+            <div class="highlight-point">📈 Increased Customer Engagement</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="view-all-btn">View All Case Studies</a>
+    </section>
+
+    <!-- footer -->
+    
+
 
     <script src="script.js"></script>
   </body>
