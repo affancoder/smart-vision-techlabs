@@ -199,7 +199,7 @@ body {
 }
 
 .hero h1 .highlight {
-  color: #2365c9;
+  color: #225bb1;
 }
 
 .hero-subtitle {
@@ -687,7 +687,8 @@ body {
 }
 
 .view-all-btn1 {
-  background: linear-gradient(135deg, #3a71c4, #4a90e2);
+  /* background: linear-gradient(135deg, #3a71c4, #4a90e2); */
+  background-color: #225bb1ed;
   color: white;
   padding: 12px 24px;
   border: none;
@@ -1038,8 +1039,9 @@ body {
   display: inline-block;
   margin-top: 10px;
   padding: 12px 24px;
-  background: linear-gradient(135deg, #3a71c4, #4a90e2);
+  /* background: linear-gradient(135deg, #3a71c4, #4a90e2); */
   color: #fff;
+  background-color: #2969c9;
   border: none;
   border-radius: 26px;
   font-weight: 600;
@@ -1179,8 +1181,9 @@ body {
 .chooseus-button-unique {
   margin-top: 20px;
   align-self: flex-end;
-  background: linear-gradient(to right, #3b82f6, #06b6d4);
+  /* background: linear-gradient(to right, #3b82f6, #06b6d4); */
   color: #fff;
+  background-color: #2969c9;
   padding: 12px 26px;
   border-radius: 30px;
   font-weight: 600;
@@ -1188,7 +1191,7 @@ body {
   border: none;
   cursor: pointer;
   transition: 0.3s ease;
-  box-shadow: 0 0 15px #06b6d4;
+  box-shadow: 0 0 15px #094385;
 }
 
 .chooseus-button-unique:hover {
@@ -1246,7 +1249,7 @@ body {
 }
 
 .portfolio-tab-btn.active {
-  background-color: #0052cc;
+  background-color: #2969c9;
   color: #fff;
 }
 
@@ -1343,7 +1346,8 @@ body {
   position: absolute;
   top: 60px;
   right: 60px;
-  background-color: #0052cc;
+  /* background-color: #0052cc; */
+  background-color: #2969c9;
   padding: 12px 24px;
   border-radius: 30px;
   font-weight: 600;
@@ -1825,7 +1829,8 @@ body {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 24px;
-  background-color: #3a71c4;
+  /* background-color: #3a71c4; */
+  background-color: #2969c9;
   color: #fff;
   text-decoration: none;
   font-weight: bold;
@@ -1966,5 +1971,6 @@ body {
   font-weight: 600;
   text-decoration: none;
   transition: 0.3s;
-  background: linear-gradient(135deg, #3a71c4, #4a90e2);
+  background-color: #2969c9;
+  /* background: linear-gradient(135deg, #3a71c4, #4a90e2); */
 }
