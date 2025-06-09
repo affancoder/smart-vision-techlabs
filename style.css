@@ -199,7 +199,7 @@ body {
 }
 
 .hero h1 .highlight {
-  color: #3a71c4;
+  color: #2365c9;
 }
 
 .hero-subtitle {
@@ -296,8 +296,8 @@ body {
 
 
 .client-logo img{
-  width: 140px;
-  height: 100px;
+  width: 100px;
+  height: 60px;
 }
 
 @keyframes slide {
@@ -751,7 +751,7 @@ body {
 }
 
 .service-card:hover .service-title {
-  color: #2c5aa0;
+  color: #0052cc;
 }
 
 .service-card:hover .read-more {
@@ -1246,7 +1246,7 @@ body {
 }
 
 .portfolio-tab-btn.active {
-  background-color: #2c5aa0;
+  background-color: #0052cc;
   color: #fff;
 }
 
@@ -1294,7 +1294,7 @@ body {
 
 .portfolio-category-label {
   font-size: 12px;
-  color: #2c5aa0;
+  color: #0052cc;
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 5px;
@@ -1343,7 +1343,7 @@ body {
   position: absolute;
   top: 60px;
   right: 60px;
-  background-color: #2c5aa0;
+  background-color: #0052cc;
   padding: 12px 24px;
   border-radius: 30px;
   font-weight: 600;
@@ -1454,7 +1454,7 @@ body {
 }
 
 .slide-indicator {
-  background-color: #2c5aa0;
+  background-color: #0052cc;
   display: inline-block;
   padding: 4px 10px;
   border-radius: 50%;
@@ -1943,7 +1943,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  color: #2c5aa0;
+  color: #0052cc;
   font-weight: bold;
   font-size: 14px;
 }
@@ -1952,7 +1952,7 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #2c5aa0;
+  color: #0052cc;
   margin-bottom: 5px;
   font-size: 14px;
   font-weight: bold;
