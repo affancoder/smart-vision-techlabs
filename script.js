@@ -79,21 +79,42 @@ function filterPortfolio(category) {
 
 const slides = [
   {
-    img: "/images/mobile-dev.jpg",
-    title: "Monitoring & Optimization",
-    desc: "Continuous Monitoring And Regular Optimizations To Keep Your Campaigns Effective And Aligned With Your Goals.",
+    img: "/images/research.jpg",
+    title: "Research",
+    desc: "At the beginning of our collaboration, we take the time to thoroughly understand your business.",
     points: [
-      "In-Depth Research",
-      "Implementation with Precision",
-      "Transparent Reporting",
+      "Identify and document your business goals and target audience",
+      "Analyze market trends and competitor strategies",
+      "Gather detailed requirements and key success metrics",
     ],
     step: "2",
   },
   {
-    img: "/images/ppc3.jpg",
-    title: "Campaign Analysis",
-    desc: "We review insights & metrics to refine strategies for better ROI and long-term success.",
-    points: ["Insight Reports", "Audience Metrics", "Actionable Feedback"],
+    img: "/images/design.jpg",
+    title: "Design",
+    desc: "During this phase, our designers will define and visualize your solution to create an appealing interface.",
+    points: ["Create wireframes and high-fidelity mockups for your solution", "Define visual style, UX flows, and interactive elements", "Incorporate feedback and iterate until the interface delights users"],
+    step: "3",
+  },
+  {
+    img: "/images/development.jpg",
+    title: "Development",
+    desc: "In this phase, the team focuses on developing the solution to meet the functional and technical requirements.",
+    points: ["Implement front-end and back-end functionality per specifications", "Integrate APIs, third-party services, and necessary databases", "Maintain clear code documentation and conduct regular code reviews"],
+    step: "3",
+  },
+  {
+    img: "/images/testing.jpg",
+    title: "Testing",
+    desc: "This is Phase where our QA experts rigorously test to ensure the highest quality and error-free solutions.",
+    points: ["Execute functional, performance, and regression tests", "Validate data accuracy, security, and responsiveness across devices", "Log, track, and resolve defects to ensure a bug-free release"],
+    step: "3",
+  },
+  {
+    img: "/images/deploy.jpg",
+    title: "Deployment",
+    desc: "During this phase of deployment, the solution is prepared and deployed to the production environment.",
+    points: ["Configure production environment and perform final sanity checks", "Deploy the solution and monitor live performance metrics.", "Provide post-launch support, documentation, and user training."],
     step: "3",
   },
 ];
@@ -106,18 +127,17 @@ function updateSlide(index) {
   slide.style.opacity = 0;
   setTimeout(() => {
     slide.innerHTML = `
-          <div class="slide-image">
-            <img src="${s.img}" alt="slide" />
-          </div>
-          <div class="slide-content">
-
-            <h2>${s.title}</h2>
-            <p>${s.desc}</p>
-            <ul>
-              ${s.points.map((p) => `<li>${p}</li>`).join("")}
-            </ul>
-          </div>
-        `;
+      <div class="slide-image">
+        <img src="${s.img}" alt="slide" />
+      </div>
+      <div class="slide-content">
+        <h2>${s.title}</h2>
+        <p>${s.desc}</p>
+        <ul>
+          ${s.points.map((p) => `<li>${p}</li>`).join("")}
+        </ul>
+      </div>
+    `;
     slide.style.opacity = 1;
   }, 300);
 }
@@ -131,6 +151,13 @@ function prevSlide() {
   current = (current - 1 + slides.length) % slides.length;
   updateSlide(current);
 }
+
+// Auto-slide every 5 seconds
+setInterval(nextSlide, 5000);
+
+// Initialize first slide
+updateSlide(current);
+
 
 // INDUSTRIES WE SERVE
 
