@@ -168,3 +168,47 @@ document.querySelectorAll('[data-card="service"]').forEach((card) => {
     card.style.background = "rgba(255, 255, 255, 0.95)";
   });
 });
+
+// testimonial.html
+
+// Add smooth scrolling for navigation links with unique selector
+document.querySelectorAll('a[href^="#svt-"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  });
+});
+
+// Add loading animation for testimonial cards with unique observer
+const svtObserverOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px",
+};
+
+const svtIntersectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = "1";
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+}, svtObserverOptions);
+
+// Initialize cards with fade-in effect using unique class selector
+document
+  .querySelectorAll(".svt-review-item")
+  .forEach((reviewCard, cardIndex) => {
+    reviewCard.style.opacity = "0";
+    reviewCard.style.transform = "translateY(30px)";
+    reviewCard.style.transition = `opacity 0.6s ease ${
+      cardIndex * 0.1
+    }s, transform 0.6s ease ${cardIndex * 0.1}s`;
+    svtIntersectionObserver.observe(reviewCard);
+  });
