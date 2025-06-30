@@ -1,3 +1,73 @@
+// Tap to top button
+
+const ascentNavigator = document.querySelector('[summit-trigger="true"]');
+const elevationThreshold = parseInt(
+  ascentNavigator.getAttribute("elevation-threshold")
+);
+
+// Track scroll position and show/hide button
+function monitoring_scroll_elevation() {
+  const currentScrollPosition =
+    window.pageYOffset || document.documentElement.scrollTop;
+
+  if (currentScrollPosition > elevationThreshold) {
+    ascentNavigator.classList.add("elevation-visible");
+  } else {
+    ascentNavigator.classList.remove("elevation-visible");
+  }
+}
+
+// Smooth scroll to top function
+function initiateAscentJourney() {
+  const velocityMode = ascentNavigator.getAttribute("velocity-mode");
+  const apexDestination = parseInt(
+    ascentNavigator.getAttribute("apex-destination")
+  );
+
+  if (velocityMode === "smooth") {
+    window.scrollTo({
+      top: apexDestination,
+      behavior: "smooth",
+    });
+  } else {
+    window.scrollTo(apexDestination, apexDestination);
+  }
+}
+
+// Throttle scroll events for better performance
+let scrollThrottleTimer = null;
+function throttledScrollHandler() {
+  if (scrollThrottleTimer !== null) {
+    return;
+  }
+  scrollThrottleTimer = setTimeout(() => {
+    monitoring_scroll_elevation();
+    scrollThrottleTimer = null;
+  }, 16); // ~60fps
+}
+
+window.addEventListener("scroll", throttledScrollHandler, { passive: true });
+
+// Event listeners
+ascentNavigator.addEventListener("click", initiateAscentJourney);
+
+// Keyboard accessibility
+ascentNavigator.addEventListener("keydown", function (event) {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    initiateAscentJourney();
+  }
+});
+
+// Add subtle animation on load
+window.addEventListener("load", function () {
+  setTimeout(() => {
+    if (window.pageYOffset > elevationThreshold) {
+      ascentNavigator.classList.add("elevation-visible");
+    }
+  }, 500);
+});
+
 // Mobile Navigation Toggle
 const mobileToggle = document.getElementById("mobileToggle");
 const navMenu = document.getElementById("navMenu");
@@ -93,28 +163,44 @@ const slides = [
     img: "/images/design.jpg",
     title: "Design",
     desc: "During this phase, our designers will define and visualize your solution to create an appealing interface.",
-    points: ["Create wireframes and high-fidelity mockups for your solution", "Define visual style, UX flows, and interactive elements", "Incorporate feedback and iterate until the interface delights users"],
+    points: [
+      "Create wireframes and high-fidelity mockups for your solution",
+      "Define visual style, UX flows, and interactive elements",
+      "Incorporate feedback and iterate until the interface delights users",
+    ],
     step: "3",
   },
   {
     img: "/images/development.jpg",
     title: "Development",
     desc: "In this phase, the team focuses on developing the solution to meet the functional and technical requirements.",
-    points: ["Implement front-end and back-end functionality per specifications", "Integrate APIs, third-party services, and necessary databases", "Maintain clear code documentation and conduct regular code reviews"],
+    points: [
+      "Implement front-end and back-end functionality per specifications",
+      "Integrate APIs, third-party services, and necessary databases",
+      "Maintain clear code documentation and conduct regular code reviews",
+    ],
     step: "3",
   },
   {
     img: "/images/testing.jpg",
     title: "Testing",
     desc: "This is Phase where our QA experts rigorously test to ensure the highest quality and error-free solutions.",
-    points: ["Execute functional, performance, and regression tests", "Validate data accuracy, security, and responsiveness across devices", "Log, track, and resolve defects to ensure a bug-free release"],
+    points: [
+      "Execute functional, performance, and regression tests",
+      "Validate data accuracy, security, and responsiveness across devices",
+      "Log, track, and resolve defects to ensure a bug-free release",
+    ],
     step: "3",
   },
   {
     img: "/images/deploy.jpg",
     title: "Deployment",
     desc: "During this phase of deployment, the solution is prepared and deployed to the production environment.",
-    points: ["Configure production environment and perform final sanity checks", "Deploy the solution and monitor live performance metrics.", "Provide post-launch support, documentation, and user training."],
+    points: [
+      "Configure production environment and perform final sanity checks",
+      "Deploy the solution and monitor live performance metrics.",
+      "Provide post-launch support, documentation, and user training.",
+    ],
     step: "3",
   },
 ];
@@ -157,7 +243,6 @@ setInterval(nextSlide, 5000);
 
 // Initialize first slide
 updateSlide(current);
-
 
 // INDUSTRIES WE SERVE
 
