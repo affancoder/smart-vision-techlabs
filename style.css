@@ -203,9 +203,9 @@ body {
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: #666;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto 25px;
   line-height: 1.6;
   font-weight: 400;
@@ -416,8 +416,8 @@ body {
 
 @media (max-width: 768px) {
   .logo img {
-    max-width: 160px;
-    height: 34px;
+    max-width: 220px;
+    height: 42px;
     flex-grow: 1;
     display: flex;
     align-items: center;
@@ -542,7 +542,15 @@ body {
   }
 
   .hero-subtitle {
-    font-size: 1.1rem;
+    margin-top: -50px;
+    font-size: 14.2px !important;
+    line-height: 1.7;
+    padding: 34px 0;
+  }
+
+  .hero-cta-text{
+    font-size: 15px;
+    padding: 0 50px;
   }
 
   .features {
@@ -2127,7 +2135,8 @@ body {
   .zenith-arrow {
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
-    border-bottom: 16px solid rgba(255, 255, 255, 0.9);
+    border-bottom: 14px solid #0052ccb1;
+    /* border-bottom: 16px solid rgba(255, 255, 255, 0.9); */
   }
 }
 
@@ -2142,6 +2151,7 @@ body {
   .zenith-arrow {
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 14px solid rgba(255, 255, 255, 0.9);
+    border-bottom: 14px solid #0052ccb1;
+    /* border-bottom: 14px solid rgba(255, 255, 255, 0.9); */
   }
 }
