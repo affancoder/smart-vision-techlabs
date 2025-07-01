@@ -19,6 +19,7 @@ body {
   top: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgb(145, 143, 143) !important;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   z-index: 1000;
@@ -175,7 +176,8 @@ body {
 .hero {
   padding-top: 70px;
   min-height: 85vh;
-  background: #f7f7f7;
+  /* background: #f7f7f7; */
+  background-color: white !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -243,7 +245,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 50px;
-  margin-bottom: 80px;
+  margin-top: 80px;
   flex-wrap: wrap;
 }
 
@@ -264,7 +266,7 @@ body {
 
 /* Clients Section */
 .clients-section {
-  background: #f7f7f7;
+  background: white;
   padding: 60px 0 80px;
 }
 
@@ -690,7 +692,7 @@ body {
 
 .main-title {
   color: #1a1a1a;
-  color: #fff;
+  /* color: #fff; */
   font-size: 42px;
   font-weight: 700;
   margin-top: 10px;
